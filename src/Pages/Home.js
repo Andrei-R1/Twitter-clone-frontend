@@ -38,16 +38,32 @@ export function Home(props) {
       </div>
       <div>
         <div>
-          {tweets.reverse().map((tweet) => (
-            <div className="text-center" key={ tweet.id }>
-              <h4>
-                {tweet.user.name} @{tweet.user.username}
-              </h4>
-              <p>{tweet.content}</p>
-              <Like tweetId={tweet.id} />
-              <Comment tweetId={tweet.id} />
-            </div>
-          ))}
+          {tweets
+            ? tweets.reverse().map((el, i) => {
+                return (
+                  <div key={i}>
+                    <h4>{el.name}</h4>
+                    <h5>{el.username}</h5>
+                    <p>{el.content}</p>
+                    <Like tweetId={el.id} />
+                    <p>{el.likes.length}</p>
+                    <Comment tweetId={el.id} />
+                    <p>{el.comments.length}</p>
+                    <div id="comments" >
+                      {el.comments.map((el, i) => {
+                        return (
+                          <div key={i}>
+                            <h4>{el.user.name}</h4>
+                            <h5>@{el.user.username}</h5>
+                            <p>{el.content}</p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })
+            : null}
         </div>
       </div>
     </div>

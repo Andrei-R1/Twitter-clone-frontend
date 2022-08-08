@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export function Like(props) {
   const userId = 1;
@@ -17,9 +17,9 @@ export function Like(props) {
   }
 
   return (
-    <div>
-      <button onClick={ fetchData }>Like</button>
-    </div>
+    <form onSubmit={ fetchData }>
+      <button type="submit">Like</button>
+    </form>
   );
 }
 
