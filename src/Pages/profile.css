@@ -1,0 +1,31 @@
+.top-container {
+  display: flex;
+  padding: 1%;
+}
+
+#sidebar{
+  align-self: flex-start;
+}
+
+#profile{
+  margin-inline-start: 31%;
+}
+
+#tweets{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#tweets-profile{
+  font-size: 24px;
+  background-color: aliceblue;
+  padding: 30px;
+  border: 1px solid black;
+}
+
+#comments-profile{
+  font-size: 16px;
+  background-color: antiquewhite;
+  padding: 10px;
+}

@@ -42,8 +42,8 @@ export function Home(props) {
             ? tweets.reverse().map((el, i) => {
                 return (
                   <div key={i}>
-                    <h4>{el.name}</h4>
-                    <h5>{el.username}</h5>
+                    <h4>{el.user.name}</h4>
+                    <h5>@{el.user.username}</h5>
                     <p>{el.content}</p>
                     <Like tweetId={el.id} />
                     <p>{el.likes.length}</p>
