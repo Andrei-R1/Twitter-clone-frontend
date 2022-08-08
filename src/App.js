@@ -1,6 +1,10 @@
+import { Login } from "./Pages/Login";
+
 function App() {
   return (
-    <div>Hello World!</div>
+    <div>
+      <Login/>
+    </div>
   );
 }
 
