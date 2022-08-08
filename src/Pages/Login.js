@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import "./login.css";
 
 export function Login() {
   const userRef = useRef();
@@ -25,11 +26,11 @@ export function Login() {
   };
 
   return (
-    <>
+    <div>
       {success ? (
         window.location.href = "/home"
       ) : (
-        <section>
+        <div>
           <p
             ref={errRef}
             className={errMsg ? "errmsg" : "offscreen"}
@@ -37,38 +38,41 @@ export function Login() {
           >
             {errMsg}
           </p>
-          <h1>Log In</h1>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username:</label>
-            <input
-              type="text"
-              id="username"
-              ref={userRef}
-              autoComplete="off"
-              onChange={(e) => setUser(e.target.value)}
-              value={user}
-              required
-            />
-
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              onChange={(e) => setPwd(e.target.value)}
-              value={pwd}
-              required
-            />
-            <button>Log In</button>
-          </form>
-          <p>
-            Need an Account?
-            <br />
-            <span className="line">
-              <a href="/register">Register</a>
-            </span>
-          </p>
-        </section>
+          <div id="container-login">
+            <h1>Log In</h1>
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="username">Username:</label>
+              <input
+                type="text"
+                id="username"
+                ref={userRef}
+                autoComplete="off"
+                onChange={(e) => setUser(e.target.value)}
+                value={user}
+                required
+              />
+              <br />
+              <label htmlFor="password">Password:</label>
+              <input
+                type="password"
+                id="password"
+                onChange={(e) => setPwd(e.target.value)}
+                value={pwd}
+                required
+              />
+              <br />
+              <button>Log In</button>
+            </form>
+            <p>
+              Need an Account?
+              <br />
+              <div className="p-3">
+                <a href="/register">Register</a>
+              </div>
+            </p>
+          </div>
+        </div>
       )}
-    </>
+    </div>
   );
 }
