@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import Sidebar from "../Components/Sidebar";
 import { Header } from "../Components/Header";
 import { Tweet } from "../Components/Tweet";
+import { Like } from "../Components/Buttons";
+import { Comment } from "../Components/Buttons";
 
-export function Home() {
+export function Home(props) {
   const [tweets, setTweets] = useState([]);
 
   useEffect(() => {
@@ -42,6 +44,8 @@ export function Home() {
                 {tweet.user.name} @{tweet.user.username}
               </h4>
               <p>{tweet.content}</p>
+              <Like tweetId={tweet.id} />
+              <Comment tweetId={tweet.id} />
             </div>
           ))}
         </div>
