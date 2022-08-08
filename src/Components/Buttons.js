@@ -7,7 +7,7 @@ export function Like(props) {
   async function fetchData() {
     const { data } = await axios({
       method: "post",
-      url: "http://localhost:8000/likes",
+      url: "https://proyecto-twitter-clone-backend.herokuapp.com/likes",
       data: {
         userId: userId,
         tweetId: props.tweetId,
@@ -30,7 +30,7 @@ export function Comment(props) {
   async function fetchData() {
     const { data } = await axios({
       method: "post",
-      url: "http://localhost:8000/comments",
+      url: "https://proyecto-twitter-clone-backend.herokuapp.com/comments",
       data: {
         userId: userId,
         tweetId: props.tweetId,

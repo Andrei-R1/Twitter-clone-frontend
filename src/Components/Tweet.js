@@ -11,7 +11,7 @@ export function Tweet() {
       async function fetchData() {
         const { data } = await axios({
           method: "post",
-          url: "http://localhost:8000/tweets",
+          url: "https://proyecto-twitter-clone-backend.herokuapp.com/tweets",
           data: {
             content: content,
             userId: 1,

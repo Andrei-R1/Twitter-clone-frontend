@@ -14,7 +14,7 @@ export function Home(props) {
       async function fetchData() {
         const { data } = await axios({
           method: "get",
-          url: "http://localhost:8000/tweets",
+          url: "https://proyecto-twitter-clone-backend.herokuapp.com/tweets",
         });
         setTweets(data);
         console.log(data);

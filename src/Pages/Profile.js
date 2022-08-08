@@ -12,7 +12,7 @@ export function Profile(props) {
       async function fetchData() {
         const { data } = await axios({
           method: "get",
-          url: "http://localhost:8000/users/1",
+          url: "https://proyecto-twitter-clone-backend.herokuapp.com/users/1",
         });
         setUser(data);
         console.log(data);
