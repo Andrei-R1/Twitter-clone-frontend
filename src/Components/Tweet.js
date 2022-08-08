@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "./tweet.css"
 
 export function Tweet() {
   const [content, setContent] = useState("");
@@ -27,7 +28,7 @@ export function Tweet() {
   }
   
   return (
-    <div>
+    <div id="tweet-post">
       <h3>Home</h3>
       <form onSubmit={ postTweet }>
         <label htmlFor="content">Whats happening?</label>

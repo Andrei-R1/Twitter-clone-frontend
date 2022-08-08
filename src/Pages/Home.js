@@ -5,6 +5,7 @@ import { Header } from "../Components/Header";
 import { Tweet } from "../Components/Tweet";
 import { Like } from "../Components/Buttons";
 import { Comment } from "../Components/Buttons";
+import "./home.css";
 
 export function Home(props) {
   const [tweets, setTweets] = useState([]);
@@ -30,18 +31,20 @@ export function Home(props) {
       <div>
         <Header />
       </div>
-      <div className="float">
-        <Sidebar />
-      </div>
-      <div className="text-center">
-        <Tweet />
+      <div id="container">
+        <div id="sidebar">
+          <Sidebar />
+        </div>
+        <div id="tweet-post">
+          <Tweet />
+        </div>
       </div>
       <div>
-        <div>
+        <div id="tweet-box">
           {tweets
             ? tweets.reverse().map((el, i) => {
                 return (
-                  <div key={i}>
+                  <div id="tweets-home" key={i}>
                     <h4>{el.user.name}</h4>
                     <h5>@{el.user.username}</h5>
                     <p>{el.content}</p>
@@ -49,10 +52,10 @@ export function Home(props) {
                     <p>{el.likes.length}</p>
                     <Comment tweetId={el.id} />
                     <p>{el.comments.length}</p>
-                    <div id="comments" >
+                    <div id="comments">
                       {el.comments.map((el, i) => {
                         return (
-                          <div key={i}>
+                          <div id="comments-home" key={i}>
                             <h4>{el.user.name}</h4>
                             <h5>@{el.user.username}</h5>
                             <p>{el.content}</p>
